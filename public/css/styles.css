@@ -1,4 +1,94 @@
-body{
-  background-color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.header {
+  height: 30vh;
+  background-image: url("/images/cover-site.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 40px;
+  
+}
+
+.opacity {
+  margin-top: -30vh;
+  background-color: #c42dc4;
+  opacity: 0.30;
+  height: 30vh;
+}
+
+.header img {
+  max-width: 250px;
+  margin-top: 2vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 2px 10px 5px #000000;
+}
+
+.container {
+  display: flex;
+  height: 60vh;
+  background-color: white;
+}
+
+.navbar {
+  padding: 30px;
+  width: 300px;
+}
+
+.navbar ul li {
+  text-decoration: none;
+  list-style: none;
+  padding: 10px 10px;
+  background-color: #824385;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.navbar ul li:hover {
+  background-color: #c067c5;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 14px;
   color: white;
+}
+
+
+.content {
+  padding: 30px;
+}
+
+.content h1 {
+  margin-bottom: 10px;
+  color: #824385;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+.content h1::selection , p::selection {
+  background-color: #c067c5;
+  color: white;
+}
+
+.footer {
+  height: 10vh;
+  background-color: white;
+  text-align: center;
+  color: #824385;
+  padding: 20px 0;
 }

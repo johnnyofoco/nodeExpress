@@ -3,7 +3,7 @@ const { listen } = require('express/lib/application')
 const path = require('path')
 const app = express()
 
-
+//define o template engine
 app.set('view engine', 'ejs')
 
 // Definindo os arquivos estáticos
@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/sobre', (req, res) => {
-  res.send('Sobre')
+app.get('/posts', (req, res) => {
+  res.render('posts')
 })
 
 //404  error (not found)
