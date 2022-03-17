@@ -12,22 +12,50 @@ app.set('view engine', 'ejs')
 // Definindo os arquivos públicos
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 //Rotas
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    title: "Home",
+  })
 })
+
+app.get('/quemsomos', (req, res) => {
+  res.render('quemsomos', {
+    title: 'Quem Somos'
+  })
+})
+
+app.get('/produtos', (req, res) => {
+  res.render('produtos', {
+    title: 'Produtos'
+  })
+})
+
+app.get('/servicos', (req, res) => {
+  res.render('servicos', {
+    title: 'Serviços'
+  })
+})
+
 
 app.get('/posts', (req, res) => {
-  res.render('posts')
+  res.render('posts', {
+    title: 'Posts'
+  })
 })
+
+app.get('/contato', (req, res) => {
+  res.render('contato', {
+    title: 'Contato'
+  })
+})
+
 
 //404  error (not found)
-app.use((req, res) => { // middleware
+app.use((req, res) => {
+  // middleware
   res.send('Página não encontrada!')
 })
-
-
 
 //Executando o servidor
 const port = process.env.PORT || 8080
