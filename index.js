@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 //Rotas
 app.get('/', (req, res) => {
   res.render('index', {
-    title: "Home",
+    title: 'Home'
   })
 })
 
@@ -37,10 +37,28 @@ app.get('/servicos', (req, res) => {
   })
 })
 
-
 app.get('/posts', (req, res) => {
+  
+  // Simular consulta BD
   res.render('posts', {
-    title: 'Posts'
+    title: 'Posts',
+    posts: [
+      {
+        title: 'Novidade no mundo da tecnologia',
+        text:
+          'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae corrupti deserunt dicta aliquid ab nulla, velodit, aliquam nobis, voluptas esse. Dolor repellat magni deserunt reprehenderit voluptate ab eius nihil!'
+      },
+      {
+        title: 'Criando um servidor com node.js',
+        text:
+          'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae corrupti deserunt dicta aliquid ab nulla, velodit, aliquam nobis, voluptas esse. Dolor repellat magni deserunt reprehenderit voluptate ab eius nihil!'
+      },
+      {
+        title: 'JavaScript é a linguagem mais usada no mundo!',
+        text:
+          'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae corrupti deserunt dicta aliquid ab nulla, velodit, aliquam nobis, voluptas esse. Dolor repellat magni deserunt reprehenderit voluptate ab eius nihil!'
+      },
+    ]
   })
 })
 
@@ -49,7 +67,6 @@ app.get('/contato', (req, res) => {
     title: 'Contato'
   })
 })
-
 
 //404  error (not found)
 app.use((req, res) => {
